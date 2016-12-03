@@ -13,10 +13,15 @@ def checkpalindrome(headnode):
     backwardchecksum = 0
     currentnode = headnode
     while(currentnode != None):
-        forwardchecksum += ord(currentnode.value) * base
-        base = base*256
-        backwardchecksum *= 256
-        backwardchecksum += ord(currentnode.value)
+        currentvalue = currentnode.value
+        if (ord(currentvalue) >= ord('A') and ord(currentvalue) <= ord('Z')):
+            currentvalue = currentvalue.lower()
+        if (ord(currentvalue) >= ord('a') and ord(currentvalue) <= ord('z')):    
+
+            forwardchecksum += ord(currentvalue) * base
+            base = base*256
+            backwardchecksum *= 256
+            backwardchecksum += ord(currentvalue)
         currentnode = currentnode.nextnode  
         print("forward checksum equals",forwardchecksum)
         print("backward checksum equals",backwardchecksum)
@@ -29,6 +34,10 @@ def checkpalindrome(headnode):
 Node1 = Node()
 Node2 = Node()
 Node3 = Node()
+Node4 = Node()
+Node5 = Node()
+Node6 = Node()
+
 Node1.value = "D"
 Node1.nextnode = Node2
 Node2.value = "o"
@@ -43,6 +52,6 @@ Node6.value = "d"
 Node6.nextnode = None
 
 if checkpalindrome(Node1):
-    print("wow is a palindrome")
+    print("Do nod is a palindrome")
 else:
-    print("wow is not a palindrome")  
+    print("Do nod is not a palindrome")  
