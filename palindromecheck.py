@@ -23,7 +23,7 @@ def checkpalindrome(headnode):
             backwardchecksum *= 256
             backwardchecksum += ord(currentvalue)
         currentnode = currentnode.nextnode  
-        print("forward checksum equals",forwardchecksum)
+        print("forward checksum equals ",forwardchecksum)
         print("backward checksum equals",backwardchecksum)
         
     if forwardchecksum == backwardchecksum:
@@ -37,6 +37,7 @@ Node3 = Node()
 Node4 = Node()
 Node5 = Node()
 Node6 = Node()
+Node7 = Node()
 
 Node1.value = "D"
 Node1.nextnode = Node2
@@ -49,9 +50,11 @@ Node4.nextnode = Node5
 Node5.value = "o"
 Node5.nextnode = Node6
 Node6.value = "d"
-Node6.nextnode = None
+Node6.nextnode = Node7
+Node7.value = "."
+Node7.nextnode = None
 
 if checkpalindrome(Node1):
-    print("Do nod is a palindrome")
+    print("Do nod. is a palindrome")
 else:
-    print("Do nod is not a palindrome")  
+    print("Do nod. is not a palindrome")  
